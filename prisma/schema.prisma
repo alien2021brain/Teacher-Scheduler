@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// schema
+// mpx prisma generate 
+// npx prisma db push
+
+model Teacher{
+  id String @id @default(uuid())
+    firstName String
+    lastName String
+    password String
+    emailId String
+    role String @default("Teacher")
+    days String
+    verify Boolean @default(false)
+    assignments Assignments[]@relation("TeacherToClasses")
+    leaves Leaves[]@relation("LeavesToTeacher")
+    createdAt DateTime @default(now())
+
+}
+model Classes{
+  id String @id @default(uuid())
+    name String
+    assignment Assignments[]@relation("AssignmentToClasses")
+    createdAt DateTime @default(now())
+}
+model Holidays{
+  id String @id @default(uuid())
+    month String
+    date String
+    year String
+    name String
+    createdAt DateTime @default(now())
+}
+
+model Leaves {
+    id String @id @default(uuid())
+    teacher_id String
+    teacher Teacher @relation("LeavesToTeacher",fields: [teacher_id],references: [id])
+    date String
+    month String
+    year String
+    reason String
+    createdAt DateTime @default(now())
+    @@index([teacher_id])
+}
+
+// adimn to assign teacher
+model Assignments{
+    id String @id @default(uuid())
+    day String
+    date String
+    class_id String
+    class Classes @relation("AssignmentToClasses",fields: [class_id],references: [id])
+    teacher_id String
+   teacher Teacher @relation("TeacherToClasses",fields: [teacher_id],references: [id])
+    createdAt DateTime @default(now())
+   @@index([class_id])
+   @@index([teacher_id])
+  
+}
+model Admin{
+    id String @id @default(uuid()) 
+    firstName String
+    lastName String
+    password String
+    emailId String
+     role String @default("Admin")
+  createdAt DateTime @default(now())
+}
