@@ -171,7 +171,9 @@ function ClassIdForm() {
                       </FormControl>
                       <SelectContent>
                         {month.map((item) => (
-                          <SelectItem value={item.name}>{item.name}</SelectItem>
+                          <SelectItem value={item.name} key={item.name}>
+                            {item.name}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
@@ -204,13 +206,13 @@ function ClassIdForm() {
                     <FormLabel>Bio</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Tell us about your reson of leave"
+                        placeholder="Tell us about your reason of leave"
                         className="resize-none"
                         {...field}
                       />
                     </FormControl>
                     <FormDescription>
-                      Tell us about your reson of leave
+                      Tell us about your reason of leave
                     </FormDescription>
                     <FormMessage />
                   </FormItem>

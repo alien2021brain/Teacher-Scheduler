@@ -76,7 +76,7 @@ export async function PATCH(req: Request, { params }: Props) {
     });
 
     if (holiday.length) {
-      return new NextResponse("today is holday");
+      return new NextResponse("today is holiday");
     }
     const Teacher = await prisma.teacher.findFirst({
       where: {
@@ -95,6 +95,7 @@ export async function PATCH(req: Request, { params }: Props) {
       html:
         "<h3>Hello</h3>" +
         Teacher?.firstName +
+        " " +
         Teacher?.lastName +
         "<h4>you have been assigned</h4>" +
         " " +

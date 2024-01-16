@@ -220,7 +220,9 @@ function HollydayIdForm({ data }: Props) {
                       </FormControl>
                       <SelectContent>
                         {month.map((item) => (
-                          <SelectItem value={item.name}>{item.name}</SelectItem>
+                          <SelectItem value={item.name} key={item.name}>
+                            {item.name}
+                          </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>

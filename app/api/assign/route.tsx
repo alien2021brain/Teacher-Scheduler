@@ -39,6 +39,7 @@ export async function POST(req: Request, { params }: Props) {
       html:
         "<h3>Hello</h3>" +
         Teacher?.firstName +
+        " " +
         Teacher?.lastName +
         "<h4>you have been assigned</h4>" +
         " " +

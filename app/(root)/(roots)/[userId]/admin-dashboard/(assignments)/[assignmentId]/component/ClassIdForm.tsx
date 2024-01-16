@@ -82,7 +82,7 @@ function ClassIdForm({ data, classes, assign }: Props) {
   }
 
   const item = {
-    title: assign ? "Update Teacher" : "Assign New Teacher",
+    title: assign ? "Update Assignment" : "Assign New Teacher",
     submit: assign ? "Update" : "Assign",
     description: assign
       ? "you can update assignment"
