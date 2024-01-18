@@ -1,0 +1,1 @@
+DATABASE_URL='mysql://bebglafyrimymq9x6a5i:pscale_pw_fHBqzjTUoIc1eQEP3jF5mL1lpCTimceJhmBgB2YFbKU@aws.connect.psdb.cloud/scheduler?sslaccept=strict'
