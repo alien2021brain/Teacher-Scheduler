@@ -21,7 +21,7 @@ function ClassClient({ data }: Props) {
         <div className="flex items-center justify-between">
           <Heading
             title="Classes"
-            description="you can mange you classes here"
+            description="you can manage your classes here"
           />
           <Button
             onClick={() =>

@@ -21,7 +21,7 @@ function ClassClient({ data }: Props) {
         <div className="flex items-center justify-between">
           <Heading
             title="Admin Dashboard"
-            description="you can mange teachers here"
+            description="you can manage teachers here"
           />
           <Button
             onClick={() => router.push(`/${params.userId}/admin-dashboard/new`)}

@@ -146,9 +146,7 @@ function ClassIdForm() {
                     <FormControl>
                       <Input placeholder="12-2-4" {...field} type="date" />
                     </FormControl>
-                    <FormDescription>
-                      Select Date you want leave
-                    </FormDescription>
+                    <FormDescription>Select Date for leave</FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -203,16 +201,16 @@ function ClassIdForm() {
                 name="reason"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Bio</FormLabel>
+                    <FormLabel>Reason</FormLabel>
                     <FormControl>
                       <Textarea
-                        placeholder="Tell us about your reason of leave"
+                        placeholder=" tell us about your reason of leave"
                         className="resize-none"
                         {...field}
                       />
                     </FormControl>
                     <FormDescription>
-                      Tell us about your reason of leave
+                      tell us about your reason of leave
                     </FormDescription>
                     <FormMessage />
                   </FormItem>

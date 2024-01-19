@@ -30,18 +30,14 @@ import {
 } from "@/components/ui/select";
 const formSchema = z
   .object({
-    firstName: z
-      .string()
-      .min(1, { message: "name must be contain 1 character" }),
-    lastName: z.string().min(1, { message: "contain atleast 1 character" }),
-    password: z
-      .string()
-      .min(4, { message: "password should contain atleast 4 character" }),
+    firstName: z.string().min(1, { message: "firstname is required" }),
+    lastName: z.string().min(1, { message: "lastname is required" }),
+    password: z.string().min(4, { message: "password is required" }),
     confirmPassword: z
       .string()
       .min(1, { message: "confirm password is required" }),
-    emailId: z.string().min(1, { message: "contain atleast 1 character" }),
-    days: z.string().min(1, { message: "please select day" }),
+    emailId: z.string().min(1, { message: "email is required" }),
+    days: z.string().min(1, { message: "At least 1 day is required." }),
   })
   .refine((data) => data.password === data.confirmPassword, {
     path: ["confirmPassword"],
@@ -194,7 +190,7 @@ function Signup() {
             </Button>
             <Link href={"/login"} className=" text-muted-foreground">
               {" "}
-              Alredy have an account ?
+              Already have an account ?
             </Link>
           </div>
         </form>

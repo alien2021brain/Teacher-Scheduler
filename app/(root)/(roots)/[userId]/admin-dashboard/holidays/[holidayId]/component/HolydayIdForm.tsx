@@ -145,7 +145,7 @@ function HollydayIdForm({ data }: Props) {
     submit: data ? "Update" : "Create",
     description: data
       ? "you can update  holiday here"
-      : "you can new create new holiday here",
+      : "you can  create new holiday here",
   };
 
   return (

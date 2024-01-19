@@ -19,7 +19,10 @@ function ClassClient({ data }: Props) {
     <div className="w-full">
       <Container className="space-y-5">
         <div className="flex items-center justify-between">
-          <Heading title="Holidays" description="you can mange holidays here" />
+          <Heading
+            title="Holidays"
+            description="you can manage holidays here"
+          />
           <Button
             onClick={() =>
               router.push(`/${params.userId}/admin-dashboard/holidays/new`)

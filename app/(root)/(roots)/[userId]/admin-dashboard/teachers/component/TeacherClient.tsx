@@ -21,7 +21,7 @@ function ClassClient({ data }: Props) {
         <div className="flex items-center justify-between">
           <Heading
             title="Teachers"
-            description="you can see all the teacher list"
+            description="you can see all the teachers list"
           />
           <Button onClick={() => router.push(`/signup`)}>Add Teacher</Button>
         </div>

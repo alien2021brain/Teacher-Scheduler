@@ -66,7 +66,7 @@ function ClassIdForm({ data }: Props) {
     submit: data ? "Update" : "Create",
     description: data
       ? "you can update your class here"
-      : "you can new create new class here",
+      : "you can create new classes here",
   };
 
   return (

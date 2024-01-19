@@ -27,11 +27,9 @@ import { Toaster, toast } from "sonner";
 const formSchema = z.object({
   emailId: z
     .string()
-    .min(1, { message: "contain atleast 1 character" })
+    .min(1, { message: "email is required" })
     .email({ message: "Invalid email address" }),
-  password: z
-    .string()
-    .min(4, { message: "password should contain atleast 4 character" }),
+  password: z.string().min(4, { message: "password is required" }),
 });
 
 function Login() {
@@ -39,16 +37,15 @@ function Login() {
   // form submit function
   async function onSubmit(values: z.infer<typeof formSchema>) {
     const res = await axios.post("/api/login", values);
-console.log(res.data.other.verify)
+    console.log(res.data.other.verify);
     if (res.data.other.verify) {
       toast.success("Login Sucessfully");
       setTimeout(() => {
         router.push("/");
       }, 1000);
-    }
-    else{
+    } else {
       router.refresh();
-      toast.error("you are no verified check your mail")
+      toast.error("you are no verified check your mail");
     }
   }
 

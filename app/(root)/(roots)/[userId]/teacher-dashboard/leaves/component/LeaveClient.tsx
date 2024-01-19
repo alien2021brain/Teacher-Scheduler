@@ -21,7 +21,7 @@ function LeaveClient({ data }: Props) {
         <div className="flex items-center justify-between">
           <Heading
             title="Leaves"
-            description="you can see the leaves of teacher here "
+            description="you can see the leaves of teachers here "
           />
           <Button
             onClick={() =>
